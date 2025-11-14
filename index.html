@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>San Sebastian de Buenavista</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- AOS animaciones -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/lugares.css">
+  
+</head>
+<body>
+  <header class="header">
+        <nav class="mi-nav">
+            <div class="logo">
+                <img src="imagenes/Escudo.png" alt="Escudo" class="logo-img">
+                <span>San Sebastián de Buenavista</span>
+                </div>
+
+            <button class="mi-nav-menu-toggle" aria-label="Abrir menú">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="mi-nav-menu">
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Inicio</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Historia</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Cultura</a></li>
+
+                <!--TURISMO con SUBMENÚ -->
+                <li class="mi-nav-menu-item mi-nav-link">
+                <a href="#" class="mi-nav-menu-link">Turismo ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Lugares emblematicos</a></li>
+                    <li><a href="#">Hoteles</a></li>
+                    <li><a href="#">Gastronomia</a></li>
+                    <li><a href="#">Artesanias</a></li>
+                    <li><a href="#">Festividades</a></li>
+                </ul>
+
+                </li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Simbolo</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Curiosidades</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">contacto</a></li>
+            </ul>
+
+        </nav>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL CON VIDEO DE FONDO -->
+  <section class="hero">
+    <video autoplay muted loop id="video-fondo">
+      <source src="imagenes/chande 1.1.mp4" type="video/mp4">
+      Tu navegador no soporta el video
+    </video>
+    
+    <div class="hero-content">
+      <h2>Tierra de chandé y tradición cultural</h2>
+      <p>Un lugar donde la música, la naturaleza y la calidez de su gente te esperan</p>
+
+      <!-- Flecha animada -->
+      <a href="#seccion-inferior" class="flecha" title="Desplazarse hacia abajo"></a>
+    </div>
+  </section>
+  
+  <!-- seccion esencia -->
+  <section class="esencia" id="seccion-inferior">
+    <div class="esencia-container">
+      <div class="esencia-texto">
+        <h2>🪘San Sebastian de Buenavista</h2>
+        <p>
+          San Sebastián de Buenavista, ubicado en el sur del Magdalena, en plena Depresión Momposina,
+          es un municipio ribereño donde se entrelazan naturaleza, cultura y tradición. Con cerca de
+          22.600 habitantes, es reconocida como “La Tierra del Chandé”, por su música autóctona,
+          su espíritu alegre y la profunda identidad cultural de su gente.
+        </p>
+      </div>
+      
+      <!-- Contenido inferior con imagen fija -->
+      <div class="esencia-contenido">
+        <div class="esencia-imagen"></div>
+        <div class="esencia-texto-2">
+          <p>
+            Fundado en 1748, San Sebastián de Buenavista guarda las huellas de los pueblos Chimilas
+            y del legado español
+            Nació entre el río y la ciénaga, y creció al ritmo de los tambores, las cosechas y la fe
+            en San Sebastián Mártir.
+            <br>
+            Hoy, sigue siendo un símbolo de historia viva en la Depresión Momposina.
+          </p>
+          <a href="#historia" class="btn-historia">📖 Conoce nuestra historia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CHANDÉ -->
+  <section class="chande">
+    <h2>🔥<span>San Sebastián de Buenavista:</span> Tierra donde nació el Chandé</h2>
+    <p class="subtitulo">Sonidos que nacen del río, del alma y de la alegría de su gente.</p>
+
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <img src="imagenes/troyo.jpg" alt="Grandes Cultores">
+        <h3>Grandes Cultores</h3>
+        <a href="cultores.html" class="btn-ver">Ver más</a>
+     </div>
+     <div class="tarjeta">
+        <img src="imagenes/inst,1.jpg" alt="Instrumentos">
+        <h3>Instrumentos</h3>
+        <a href="instrumentos.html" class="btn-ver">Ver más</a>
+      </div>
+
+      <div class="tarjeta">
+        <img src="imagenes/ves 1.jpg" alt="Vestuario">
+        <h3>Vestuario</h3>
+        <a href="vestuario.html" class="btn-ver">Ver más</a>
+      </div>
+    </div>
+
+    <p class="descripcion">
+    Nacido entre tambores, río y tradición, el Chandé es más que música: es identidad, resistencia y alegría.
+    Heredado de los ancestros africanos, indígenas y campesinos, este ritmo centenario sigue encendiendo las fiestas
+    y corazones de quienes sienten orgullo por su tierra, “La Tierra del Chandé”.
+    </p>
+
+    <a href="cultura.html" class="btn-cultura">🪘 Conoce nuestra cultura</a>
+  </section>
+
+
+  <!-- Turismo en San Sebastián de Buenavista-->
+  <section id="carrusel" class="carrusel-section">
+
+    <div class="intro-carrusel">
+      <h2>Entre el rumor del río y la calma de sus ciénagas,</h2>
+      <p>San Sebastián te invita a vivir la naturaleza en su forma más pura.<br>
+      <span class="emoji">🏞️</span> Descubre la magia de San Sebastián</p>
+      </div>
+
+      <div class="slider">
+
+      <div class="list">
+
+          <!-- IGLESIA -->
+          <div class="item">
+              <img src="./imagenes/Iglesia.jpg" alt="">
+              <div class="content">
+                  <div class="title">San Sebastián de Buenavista</div>
+                  <div class="type">Iglesia Central de San Sebastián Mártir</div>
+                  <div class="description">
+                      El corazón espiritual del pueblo, donde la fe se mezcla con la belleza colonial.
+                      Un lugar de paz y devoción que invita a la reflexión y al encuentro con lo divino.
+                  </div>
+                  <div class="button">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modalIglesia">Ver más</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- PARQUE -->
+          <div class="item">
+              <img src="./imagenes/Parque.jpg" alt="">
+              <div class="content">
+                  <div class="title">San Sebastián de Buenavista</div>
+                  <div class="type">Parque Jorge Eliécer Gaitán</div>
+                  <div class="description">
+                      Un rincón lleno de historia donde el legado de Gaitán inspira cada paso.
+                      Un espacio vibrante que celebra la cultura y la comunidad, ideal para pasear y disfrutar de la vida local.
+                  </div>
+                  <div class="button">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modalParque">Ver más</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- OBELISCO -->
+          <div class="item">
+              <img src="./imagenes/Obelisco.jpg" alt="">
+              <div class="content">
+                  <div class="title">San Sebastián de Buenavista</div>
+                  <div class="type">Obelisco</div>
+                  <div class="description">
+                      Un monumento que rinde homenaje a la historia y la cultura de San Sebastián. Un lugar de encuentro para la comunidad y un símbolo de identidad.
+                  </div>
+                  <div class="button">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modalObelisco">Ver más</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- CHANAS -->
+          <div class="item">
+            <img src="./imagenes/Chanas.jpg" alt="">
+            <div class="content">
+              <div class="title">San Sebastián de Buenavista</div>
+              <div class="type">Las Chanas</div>
+              <div class="description">
+                  Un tesoro escondido de San Sebastián, donde la naturaleza, el arte y la tradición se funden en un paisaje lleno de vida y color.
+              </div>
+              <div class="button">
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#modalChanas">Ver más</button>
+              </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="thumbnail">
+        <div class="item"><img src="./imagenes/Iglesia.jpg" alt=""></div>
+        <div class="item"><img src="./imagenes/Parque.jpg" alt=""></div>
+        <div class="item"><img src="./imagenes/Obelisco.jpg" alt=""></div>
+        <div class="item"><img src="./imagenes/Chanas.jpg" alt=""></div>
+      </div>
+
+      <div class="nextPrevArrows">
+        <button class="prev"><</button>
+        <button class="next">></button>
+      </div>
+    </div>
+    
+    <!-- MODALES DE BOOTSTRAP  -->
+     <!-- MODAL IGLESIA -->
+      <div class="modal fade" id="modalIglesia" tabindex="-1" aria-labelledby="modalIglesiaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+              <h5 class="modal-title fw-bold" id="modalIglesiaLabel">Iglesia Central de San Sebastián Mártir</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                La Iglesia Central es el corazón espiritual del municipio. Su arquitectura colonial y su ambiente sagrado representan siglos de fe, tradición y comunidad. Es un punto de encuentro para todos los habitantes, donde la historia y la devoción se entrelazan.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- MODAL PARQUE -->
+    <div class="modal fade" id="modalParque" tabindex="-1" aria-labelledby="modalParqueLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title fw-bold" id="modalParqueLabel">Parque Jorge Eliécer Gaitán</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              El parque principal es el corazón social de San Sebastián. Un espacio lleno de árboles, risas y recuerdos donde los habitantes se reúnen para compartir y celebrar. Su entorno combina historia, cultura y vida comunitaria.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL OBELISCO -->
+    <div class="modal fade" id="modalObelisco" tabindex="-1" aria-labelledby="modalObeliscoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title fw-bold" id="modalObeliscoLabel">Obelisco de San Sebastián</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              El obelisco representa la memoria y el orgullo histórico de la comunidad. Su estructura se levanta como testigo de los acontecimientos más importantes, siendo un símbolo de identidad para los habitantes del municipio.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL CHANAS -->
+    <div class="modal fade" id="modalChanas" tabindex="-1" aria-labelledby="modalChanasLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title fw-bold" id="modalChanasLabel">Las Chanas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Las Chanas son un entorno natural y cultural donde se mezclan la naturaleza, el arte y la tradición. Es un rincón especial que muestra el espíritu alegre, creativo y trabajador de la gente de San Sebastián.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Columna 1 -->
+      <div class="footer-col">
+        <h3>San Sebastián de Buenavista</h3>
+        <p>Tierra del Chandé, cultura, tradición y naturaleza.</p>
+        <img src="imagenes/Escudo.png" alt="Escudo" class="footer-logo">
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Historia</a></li>
+          <li><a href="#">Cultura</a></li>
+          <li><a href="#">Turismo</a></li>
+          <li><a href="#">Símbolo</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>📍 San Sebastián de Buenavista, Magdalena</p>
+        <p>📧 info@sansebastian.gov.co</p>
+        <p>📞 +57 300 000 0000</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 San Sebastián de Buenavista | Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+
+  <!-- Librería Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <Script src="SCRIPT/script.js"></Script>
+
+</body>
+</html>
