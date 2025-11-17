@@ -4,10 +4,10 @@
     margin: 0px;
     padding: 20px;
     box-sizing: border-box;
-    margin-bottom: -80px;
+    margin-bottom: -100px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 900px;
 }
-
 
 /* Intro */
 .gastronomia-section .gas-intro {
@@ -17,6 +17,8 @@
   color: #000000;
   line-height: 1.5;
   padding: 0 20px;
+  
+  
 }
 .gastronomia-section .gas-intro h2 {
   font-size: 2.5em;

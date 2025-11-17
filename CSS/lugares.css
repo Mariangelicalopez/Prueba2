@@ -4,7 +4,9 @@
 .carrusel-section {
 background: linear-gradient(135deg, #6fb973 0%, #e7cfc2 100%);
     padding: 10px 10px;
-    margin-bottom: -80px;
+    margin-bottom: -100px;
+    height: 1000px;
+    
 }
 .intro-carrusel {
   text-align: center;
@@ -14,6 +16,7 @@ background: linear-gradient(135deg, #6fb973 0%, #e7cfc2 100%);
   color: #222222;
   line-height: 1.5;
   padding: 0 20px;
+  
 }
 
 .intro-carrusel h2 {

@@ -214,6 +214,7 @@ section {
   color: #222;
   text-align: center;
   overflow: hidden;
+  height: 850px;
 }
 
 /* Contenedor general */
@@ -308,6 +309,7 @@ section {
   text-align: center;
   padding: 100px 10%;
   color: #222;
+  height: 900px;
 }
 
 .chande h2 {

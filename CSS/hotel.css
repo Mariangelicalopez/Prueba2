@@ -1,19 +1,22 @@
 /* Hotel.css - clases específicas para evitar choques */
-body {
+.body-hotel {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #7cc4ff, #ffffff);
+    
+
 }
 
 /* Sección hotel */
 .hotel-section {
     box-sizing: border-box;
     text-align: center;
-    padding: 40px 20px;
+    padding: 5px 20px;
     margin-top: 100px;
     margin: 100px 0 50px ;
+    margin-bottom: -80px;
+    height: 1000px;
 }
 
 /* Título / intro (mantengo el nombre existente) */
@@ -53,8 +56,8 @@ body {
 /* Cada tarjeta del hotel (nombre específico) */
 .hotel-container .hotel-card{
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background: #fff;
     border-radius: 40px;
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
@@ -64,14 +67,14 @@ body {
 
 /* Efecto hover: crece la tarjeta */
 .hotel-container .hotel-card:hover{
-    height: 420px;
+    height: 350px;
 }
 
 /* Caja de imagen (nombre específico) */
 .hotel-container .hotel-imgbox {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 220px;
   overflow: hidden;
   background: #555;
 }
