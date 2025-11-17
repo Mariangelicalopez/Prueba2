@@ -251,13 +251,14 @@ section {
 /* Imagen con efecto fijo */
 .esencia-imagen {
   flex: 1;
-  background-image: url('imagenes/Calle.jpg');
+  background-image: url('../imagenes/calle.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 90vh;
-  border-radius: 0;              /* Quita el borde redondeado */
-  margin-left: -10%;             /* Extiende la imagen hacia el borde */
+  border-radius: 10px;              /* Quita el borde redondeado */
+  overflow: hidden;
+  margin-left: -5%;             /* Extiende la imagen hacia el borde */
   width: calc(100% + 10%);       /* Compensa el padding del contenedor */
   box-shadow: none;              /* Quita la sombra para que se una bien al borde */
 }
