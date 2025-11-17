@@ -33,18 +33,18 @@
                 <i data-lucide="menu"></i>
             </button>
             <ul class="mi-nav-menu">
-                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Inicio</a></li>
-                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Historia</a></li>
-                <li class="mi-nav-menu-item mi-nav-link"><a href="#" class="mi-nav-menu-link">Cultura</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#Inicio" class="mi-nav-menu-link">Inicio</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#seccion-inferior" class="mi-nav-menu-link">Historia</a></li>
+                <li class="mi-nav-menu-item mi-nav-link"><a href="#cultura" class="mi-nav-menu-link">Cultura</a></li>
 
                 <!--TURISMO con SUBMENÚ -->
                 <li class="mi-nav-menu-item mi-nav-link">
                 <a href="#" class="mi-nav-menu-link">Turismo ▾</a>
                 <ul class="submenu">
-                    <li><a href="#">Lugares emblematicos</a></li>
-                    <li><a href="#">Hoteles</a></li>
-                    <li><a href="#">Gastronomia</a></li>
-                    <li><a href="#">Artesanias</a></li>
+                    <li><a href="#carrusel">Lugares emblematicos</a></li>
+                    <li><a href="#hotel">Hoteles</a></li>
+                    <li><a href="#gastronomia">Gastronomia</a></li>
+                    <li><a href="#artesania">Artesanias</a></li>
                     <li><a href="#">Festividades</a></li>
                 </ul>
 
@@ -58,7 +58,7 @@
   </header>
 
   <!-- SECCIÓN PRINCIPAL CON VIDEO DE FONDO -->
-  <section class="hero">
+  <section id="Inicio" class="hero">
     <video autoplay muted loop id="video-fondo">
       <source src="imagenes/chande 1.1.mp4" type="video/mp4">
       Tu navegador no soporta el video
@@ -105,7 +105,7 @@
   </section>
 
   <!-- SECCIÓN CHANDÉ -->
-  <section class="chande">
+  <section class="chande" id="cultura">
     <h2>🔥<span>San Sebastián de Buenavista:</span> Tierra donde nació el Chandé</h2>
     <p class="subtitulo">Sonidos que nacen del río, del alma y de la alegría de su gente.</p>
 
@@ -312,7 +312,7 @@
 
  
     <!-- Hotel -->
-<section class="hotel-section body-hotel">
+<section id="hotel" class="hotel-section body-hotel">
     <div class="intro-hotel">
       <h2>Hoteles de San Sebastián de Buenavista</h2>
       <p>Sabores auténticos que cuentan la historia de nuestra tierra.<br>
@@ -381,7 +381,7 @@
   </section>
 
 
-<section class="gastronomia-section body-gastro">
+<section id="gastronomia" class="gastronomia-section body-gastro">
   <div class="gas-intro">
     <h2>Gastronomía de San Sebastián de Buenavista</h2>
     <p>De nuestras cocinas nacen aromas y sabores que te harán sentir en casa. Prueba las almojábanas más suaves del Magdalena o el tradicional sancocho de pescado a la orilla del río..</p>
@@ -442,40 +442,41 @@
 <!-- Artesanias -->
 <section id="artesanias" class="artesanias-section">
     <div class="intro-artesanias">
-         <h2>Artesanías de San Sebastián de Buenavista</h2>
-         <p>Descubre las artesanías únicas que reflejan la cultura y tradición de San Sebastián.<br>
-        <span class="emoji">🎨</span> Creaciones que combinan talento y herencia local.</p>
+      <h2>Artesanías de San Sebastián de Buenavista</h2>
+      <p>Descubre las artesanías únicas que reflejan la cultura y tradición de San Sebastián.<br>
+        <span class="emoji">🎨</span> Creaciones que combinan talento y herencia local.
+      </p>
     </div>
 
     <div class="card-container">
-    <div class="card">
-      <img src="imagenes/Piscina.jpg" alt="Hotel ">
-      <div class="card-content">
-         <h3>🌿 Tejidos naturales</h3>
-         <p>Manos que transforman la ciénaga en belleza.</p>
-         <a href="" class="btn">Ver mas</a>
+      <div class="card">
+        <img src="imagenes/Piscina.jpg" alt="Hotel ">
+        <div class="card-content">
+          <h3>🌿 Tejidos naturales</h3>
+          <p>Manos que transforman la ciénaga en belleza.</p>
+          <a href="" class="btn">Ver mas</a>
+      </div>
     </div>
-  </div>
 
     <div class="card">
       <img src="imagenes/Obelisco.jpg" alt="H ">
       <div class="card-content">
-         <h3>🏺 Alfarería</h3>
-         <p>El arte que nace del barro.</p>
-         <a href="" class="btn">Ver mas</a>
+        <h3>🏺 Alfarería</h3>
+        <p>El arte que nace del barro.</p>
+        <a href="" class="btn">Ver mas</a>
       </div>
     </div>
 
-     <div class="card">
+    <div class="card">
       <img src="imagenes/Rancho.jpg" alt="Htel ">
       <div class="card-content">
-         <h3>🪵 Madera tallada</h3>
-         <p>Del bosque a la creación.</p>
-         <a href="" class="btn">Ver mas</a>
+        <h3>🪵 Madera tallada</h3>
+        <p>Del bosque a la creación.</p>
+        <a href="" class="btn">Ver mas</a>
+      </div>
+      </div>
     </div>
-    </div>
-    </div>
-    </section>
+  </section>
 
 
 

@@ -7,7 +7,6 @@ body{
   font-family: sans-serif;
   padding: 0;
   margin: 0;
-  
 }
 
 .header{
@@ -32,7 +31,6 @@ section {
   align-items: center;
   width: 100%;
   padding: 0 15px;
-
 }
 
 .mi-nav-link{
@@ -54,11 +52,10 @@ section {
 
 .logo-img{
   width: 40px;
-  height: 56px;
+  height: 50px;
   vertical-align: middle;
   margin-top: -4px; /* Ajusta este valor según necesites */
 }
-
 
 .mi-nav-menu{
   display: flex;
@@ -214,7 +211,6 @@ section {
   color: #222;
   text-align: center;
   overflow: hidden;
-  height: 850px;
 }
 
 /* Contenedor general */
@@ -256,7 +252,7 @@ section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 90vh;
+  min-height: 60vh;
   border-radius: 10px;              /* Quita el borde redondeado */
   overflow: hidden;
   margin-left: -5%;             /* Extiende la imagen hacia el borde */
@@ -271,7 +267,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -120px;
+  margin-top: -20px;
   padding: 45px 40px;
 }
 
@@ -310,7 +306,6 @@ section {
   text-align: center;
   padding: 100px 10%;
   color: #222;
-  height: 900px;
 }
 
 .chande h2 {
@@ -500,41 +495,26 @@ section {
     height: 60px;
   }
 
-  .hero {
-    display: flex;
-    justify-content: flex-start;
-    height: 100vh;
-    padding: 80px 15px 0 15px; /* Ajuste superior por el header */
-    text-align: left;
+  .hero{
+    margin-top: 60px;
   }
 
-  .hero-content {
-    margin-top: 10px !important;
-    width: 100%;
-    max-width: 100%;
-    text-align: left;
-    padding: 0 5px;
-    transform: none !important; 
+  .hero-content{
+    margin-top: 100px;
+    font-size: 0.9em;
   }
 
   .hero-content h2 {
-    font-size: 2rem;  
-    text-align: center;         
-    line-height: 1.2;
-    width: 100%;
-    font-weight: 700;
+  font-size: 3em;
   }
 
-  .hero-content p {
-    font-size: 1rem;  
-    text-align: center;          /* Más pequeño */
-    line-height: 1.4;
-    margin-top: 10px;
-    width: 100%;
+  .hero-content p{
+    margin: 10px 0 110px;
+    font-size: 2em;
   }
 
   .logo {
-    font-size: 15px;
+    font-size: 20px;
     padding: 0 20px;
     line-height: 60px;
   }
@@ -545,7 +525,7 @@ section {
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 207, 202);
     position: fixed;
     left: 0;
     top: 60px;
@@ -577,7 +557,7 @@ section {
   }
 
   .flecha{
-    bottom: -100px;
+    bottom: 30px;
   }
 
   .esencia-contenido {
@@ -594,35 +574,16 @@ section {
   }
 
   .esencia-texto-2 {
-    padding: 65px 20px;
+    padding: 40px 40px;
+    margin-top: -90px;
   }
-  .chande {
-  text-align: center;
-  padding: 20px 10%;
-  color: #222;
-}
-
-.chande h2 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.chande h2 span {
-  color: #000000;
-}
-
-.chande .subtitulo {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 50px;
-}
 
   .tarjetas {
     flex-direction: column;
     align-items: center;
     gap: 30px;
   }
+
   .tarjeta {
     width: 80%;
   }
