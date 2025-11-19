@@ -5,14 +5,14 @@
     padding: 20px;
     box-sizing: border-box;
     margin-bottom: -100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    height: 900px;
+    font-family: 'Times New Roman', Times, serif;
+    min-height: 950px;
 }
 
 /* Intro */
 .gastronomia-section .gas-intro {
   text-align: center;
-  margin: 30px auto 10px;
+  margin: 100px auto 10px;
   max-width: 1000px;
   color: #000000;
   line-height: 1.5;
@@ -38,7 +38,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  margin-top: 20px;
+  margin-top: 80px;
   align-items: center;
   justify-content: center;
 }
@@ -52,7 +52,7 @@
 
 /* Card (específica) */
 .gastronomia-section .gas-card {
-  width: 70px;
+  width: 90px;
   border-radius: 2rem;
   background-size: cover;
   cursor: pointer;
@@ -76,7 +76,7 @@
   background: rgb(230, 157, 21);
   color: white;
   border-radius: 50%;
-  width: 50px;
+  width: 55px;
   display: flex;
   justify-content: center;
   align-items: center;

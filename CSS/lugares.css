@@ -5,7 +5,8 @@
 background: linear-gradient(135deg, #6fb973 0%, #e7cfc2 100%);
     padding: 10px 10px;
     margin-bottom: -100px;
-    height: 1000px;
+    min-height: 950px;
+
     
 }
 .intro-carrusel {

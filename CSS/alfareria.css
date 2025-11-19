@@ -1,0 +1,226 @@
+/* ===========================
+   BOTÓN VOLVER FIJO
+=========================== */
+
+.btn-volver-fijo {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 9999;
+    
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 50%;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    transition: 0.3s ease;
+}
+
+.btn-volver-fijo:hover {
+    background: rgba(255, 204, 120, 0.9);
+    color: #4b2b00;
+    transform: scale(1.15) rotate(-8deg);
+}
+.hero-alfareria {
+    height: 430px;
+    background: url("../imagenes/alfareriabanner.jpg") center/cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-alfareria h1 {
+    font-size: 3.3rem;
+    color: #fff4e8;
+    text-shadow: 0 6px 25px rgba(0,0,0,0.6);
+    animation: fadeDown 1.2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeDown {
+    0% { transform: translateY(-40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ===========================
+   ONDA DECORATIVA
+=========================== */
+.onda-separador {
+    margin-top: -80px;
+}
+
+/* ===========================
+   TARJETA DE TEXTO PRINCIPAL
+=========================== */
+.tarjeta-texto {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #f7eee6;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(120, 70, 35, 0.25);
+    animation: fadeUp 1.2s ease;
+}
+
+.tarjeta-texto h2 {
+    color: #7a3f1a;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.tarjeta-texto p {
+    color: #5b4638;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   GALERÍA ARTÍSTICA GRID
+=========================== */
+.galeria {
+    width: 90%;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.g-item {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(90, 45, 20, 0.2);
+    animation: fadeUp 1s ease;
+}
+
+.g-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.g-item:hover img {
+    transform: scale(1.12);
+}
+
+/* Tamaños especiales */
+.grande { grid-row: span 2; }
+.vertical { grid-row: span 2; }
+.horizontal { grid-column: span 2; }
+
+/* ===========================
+   TARJETA FINAL
+=========================== */
+.tarjeta-texto.final {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/*FOOTER ESTILOS */
+
+.footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 50px 0 20px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 80px;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* Títulos del footer */
+.footer h3,
+.footer h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fbc02d; /* Amarillo similar al que usas */
+}
+
+/* Logo del footer */
+.footer-logo {
+  width: 90px;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Párrafos */
+.footer p {
+  opacity: 0.8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Enlaces */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #ffffffb3;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fbc02d;
+  text-decoration: underline;
+}
+
+/* Parte inferior */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff30;
+  margin-top: 30px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #ffffff80;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 820px) {
+    .hero-alfareria h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .horizontal { grid-column: span 1; }
+}

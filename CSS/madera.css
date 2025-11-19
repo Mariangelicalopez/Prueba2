@@ -1,0 +1,241 @@
+/* ===========================
+   HERO CON IMAGEN DE FONDO
+=========================== */
+
+/* ===========================
+   BOTÓN VOLVER FIJO
+=========================== */
+
+.btn-volver-fijo {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 9999;
+    
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 50%;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    transition: 0.3s ease;
+}
+
+.btn-volver-fijo:hover {
+    background: rgba(255, 204, 120, 0.9);
+    color: #4b2b00;
+    transform: scale(1.15) rotate(-8deg);
+}
+
+.madera-hero {
+    height: 430px;
+    background: url("../imagenes/maderabanner.jpg") center/cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* DEGRADADO OSCURO PARA QUE SE LEA EL TEXTO */
+.madera-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+/* TÍTULO ENCIMA DE LA IMAGEN */
+.madera-titulo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    position: relative;
+    animation: fadeDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* ANIMACIÓN DEL TÍTULO */
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   CONTENIDO PRINCIPAL
+=========================== */
+
+.madera-contenido {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.madera-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.madera-item img {
+    width: 45%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+}
+
+.madera-item img:hover {
+    transform: scale(1.03);
+}
+
+.madera-texto {
+    width: 55%;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.madera-texto h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.madera-texto p{
+    font-size: 1.2rem;
+}
+
+.madera-item.invertir {
+    flex-direction: row-reverse;
+}
+
+/*FOOTER ESTILOS */
+
+.footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 50px 0 20px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 80px;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* Títulos del footer */
+.footer h3,
+.footer h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fbc02d; /* Amarillo similar al que usas */
+}
+
+/* Logo del footer */
+.footer-logo {
+  width: 90px;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Párrafos */
+.footer p {
+  opacity: 0.8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Enlaces */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #ffffffb3;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fbc02d;
+  text-decoration: underline;
+}
+
+/* Parte inferior */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff30;
+  margin-top: 30px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #ffffff80;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .madera-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .madera-texto,
+    .madera-item img {
+        width: 100%;
+    }
+
+    .madera-titulo {
+        font-size: 2.4rem;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .madera-hero {
+        height: 270px;
+    }
+
+    .madera-titulo {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    .madera-contenido {
+        width: 95%;
+    }
+}

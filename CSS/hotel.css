@@ -13,10 +13,13 @@
     box-sizing: border-box;
     text-align: center;
     padding: 5px 20px;
-    margin-top: 100px;
-    margin: 100px 0 50px ;
+    margin: 100px 0 50px;
     margin-bottom: -80px;
     height: 1000px;
+    min-height: 950px; /* por si venía heredado */
+    padding-top: 120px;
+    z-index: 2;
+    position: relative;
 }
 
 /* Título / intro (mantengo el nombre existente) */
@@ -42,15 +45,26 @@
 }
 
 /* Contenedor específico para hoteles */
-.hotel-container{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    max-width: 1350px;
-    margin: 0 auto;
+.hotel-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 40px; /* separación entre tarjetas */
+    max-width: 700px; /* ancho total del grid */
+    margin: 0 auto; /* centrar el grid */
+    justify-items: center; /* centrar cada tarjeta */
+}
+
+.hoteles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;   /* ← Esto evita que se choquen */
+    margin-bottom: 80px; /* ← Esto separa de la siguiente sección */
+}
+
+.hotel-card {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
 }
 
 /* Cada tarjeta del hotel (nombre específico) */
