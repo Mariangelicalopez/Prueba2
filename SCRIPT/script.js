@@ -17,6 +17,51 @@ toggle.addEventListener('click', () => {
   lucide.createIcons(); // actualizar el ícono
 });
 
+// modal esencia
+const modalEsencia = document.getElementById("modalEsencia");
+const titleEsencia = document.getElementById("modalEsenciaTitle");
+const textEsencia = document.getElementById("modalEsenciaText");
+
+const btnCerrarEsencia = document.getElementById("cerrarEsenciaBtn");
+const xCerrarEsencia = document.getElementById("cerrarEsenciaX");
+const btnOpenEsencia = document.getElementById("openEsencia");
+
+
+// 👉 FUNCIÓN PARA ABRIR EL MODAL
+function abrirModalEsencia(titulo, texto) {
+  titleEsencia.textContent = titulo;
+  textEsencia.textContent = texto;
+  modalEsencia.classList.add("show");
+}
+
+
+// 👉 BOTÓN QUE ABRE EL MODAL
+btnOpenEsencia.addEventListener("click", () => {
+  abrirModalEsencia(
+    "Nuestra Historia",
+    "San Sebastián de Buenavista nació entre el río, la tradición y la identidad cultural..."
+  );
+});
+
+
+// 👉 BOTÓN CERRAR
+btnCerrarEsencia.addEventListener("click", () => {
+  modalEsencia.classList.remove("show");
+});
+
+// 👉 X CERRAR
+xCerrarEsencia.addEventListener("click", () => {
+  modalEsencia.classList.remove("show");
+});
+
+// 👉 CERRAR HACIENDO CLICK AFUERA
+modalEsencia.addEventListener("click", (e) => {
+  if (e.target === modalEsencia) {
+    modalEsencia.classList.remove("show");
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // TURISMO SLIDER // 
   let nextBtn = document.querySelector('.next');
