@@ -7,6 +7,7 @@ body{
   font-family: sans-serif;
   padding: 0;
   margin: 0;
+
    min-height: 900px;
   padding: 80px 20px;
   display: flex;
@@ -37,7 +38,6 @@ section {
   align-items: center;
   width: 100%;
   padding: 0 15px;
-
 }
 
 .mi-nav-link{
@@ -59,11 +59,10 @@ section {
 
 .logo-img{
   width: 40px;
-  height: 56px;
+  height: 50px;
   vertical-align: middle;
   margin-top: -4px; /* Ajusta este valor según necesites */
 }
-
 
 .mi-nav-menu{
   display: flex;
@@ -221,8 +220,10 @@ section {
   color: #222;
   text-align: center;
   overflow: hidden;
+
   height: 850px;
   min-height: 950px;
+
 }
 
 /* Contenedor general */
@@ -260,13 +261,14 @@ section {
 /* Imagen con efecto fijo */
 .esencia-imagen {
   flex: 1;
-  background-image: url('imagenes/Calle.jpg');
+  background-image: url('../imagenes/calle.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 90vh;
-  border-radius: 0;              /* Quita el borde redondeado */
-  margin-left: -10%;             /* Extiende la imagen hacia el borde */
+  min-height: 60vh;
+  border-radius: 10px;              /* Quita el borde redondeado */
+  overflow: hidden;
+  margin-left: -5%;             /* Extiende la imagen hacia el borde */
   width: calc(100% + 10%);       /* Compensa el padding del contenedor */
   box-shadow: none;              /* Quita la sombra para que se una bien al borde */
 }
@@ -278,7 +280,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -120px;
+  margin-top: -20px;
   padding: 45px 40px;
 }
 
@@ -311,6 +313,111 @@ section {
   background-color: #b71511;
 }
 
+/* MODAL ESENCIA */
+.modal-esencia {
+  display: none;
+  position: fixed;
+  z-index: 5000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-esencia.show {
+  display: flex;
+}
+
+/* CUERPO DEL MODAL */
+.modal-esencia-contenido {
+  background: #fff;
+  width: 90%;
+  max-width: 650px;
+  border-radius: 16px;
+  overflow: hidden;
+  animation: modalFade 0.35s ease;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+/* ANIMACIÓN */
+@keyframes modalFade {
+  from { opacity: 0; transform: translateY(-25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* HEADER */
+.modal-esencia-header {
+  background: #ffc400;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-esencia-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* X DE CERRAR */
+.modal-esencia-x {
+  font-size: 26px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+/* BODY */
+.modal-esencia-body {
+  padding: 20px 25px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* FOOTER */
+.modal-esencia-footer {
+  padding: 15px 25px;
+  background: #f3f3f3;
+  text-align: right;
+}
+
+/* BOTÓN CERRAR */
+.modal-esencia-btn {
+  padding: 8px 20px;
+  background: #666;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-esencia-btn:hover {
+  background: #4a4a4a;
+}
+
+/* BOTÓN DE LA SECCIÓN (personalizable) */
+.btn-esencia {
+  background-color: #e41b17;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-esencia:hover {
+  background-color: #b71511;
+}
+
+
 /* seccion chandé*/
 .chande {
   background-color: #f8f4f4;
@@ -319,7 +426,7 @@ section {
   color: #222;
   height: 900px;
   min-height: 950px;
-}
+
 
 .chande h2 {
   font-size: 2em;
@@ -508,41 +615,26 @@ section {
     height: 60px;
   }
 
-  .hero {
-    display: flex;
-    justify-content: flex-start;
-    height: 100vh;
-    padding: 80px 15px 0 15px; /* Ajuste superior por el header */
-    text-align: left;
+  .hero{
+    margin-top: 60px;
   }
 
-  .hero-content {
-    margin-top: 10px !important;
-    width: 100%;
-    max-width: 100%;
-    text-align: left;
-    padding: 0 5px;
-    transform: none !important; 
+  .hero-content{
+    margin-top: 100px;
+    font-size: 0.9em;
   }
 
   .hero-content h2 {
-    font-size: 2rem;  
-    text-align: center;         
-    line-height: 1.2;
-    width: 100%;
-    font-weight: 700;
+  font-size: 3em;
   }
 
-  .hero-content p {
-    font-size: 1rem;  
-    text-align: center;          /* Más pequeño */
-    line-height: 1.4;
-    margin-top: 10px;
-    width: 100%;
+  .hero-content p{
+    margin: 10px 0 110px;
+    font-size: 2em;
   }
 
   .logo {
-    font-size: 15px;
+    font-size: 20px;
     padding: 0 20px;
     line-height: 60px;
   }
@@ -553,7 +645,7 @@ section {
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 207, 202);
     position: fixed;
     left: 0;
     top: 60px;
@@ -585,7 +677,7 @@ section {
   }
 
   .flecha{
-    bottom: -100px;
+    bottom: 30px;
   }
 
   .esencia-contenido {
@@ -602,8 +694,10 @@ section {
   }
 
   .esencia-texto-2 {
-    padding: 65px 20px;
+    padding: 40px 40px;
+    margin-top: -90px;
   }
+
   .chande {
   text-align: center;
   padding: 20px 10%;
@@ -632,6 +726,7 @@ section {
     align-items: center;
     gap: 30px;
   }
+
   .tarjeta {
     width: 80%;
   }
@@ -650,4 +745,5 @@ section {
   .footer-logo {
     margin: 0 auto;
   }
+}
 }

@@ -179,6 +179,15 @@ section {
   perspective: 1000px;
 }
 
+.card {
+  pointer-events: auto !important;
+}
+
+.card * {
+  pointer-events: none !important;
+}
+
+
 .card div {
   position: absolute;
   width: 100%;
@@ -188,6 +197,12 @@ section {
   backface-visibility: hidden;
   transition: transform 1s;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Evitar doble clic causado por elementos internos */
+.card .front,
+.card .back {
+  pointer-events: none;
 }
 
 /* Lado frontal */

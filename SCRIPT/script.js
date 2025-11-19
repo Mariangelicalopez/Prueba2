@@ -17,6 +17,51 @@ toggle.addEventListener('click', () => {
   lucide.createIcons(); // actualizar el ícono
 });
 
+// modal esencia
+const modalEsencia = document.getElementById("modalEsencia");
+const titleEsencia = document.getElementById("modalEsenciaTitle");
+const textEsencia = document.getElementById("modalEsenciaText");
+
+const btnCerrarEsencia = document.getElementById("cerrarEsenciaBtn");
+const xCerrarEsencia = document.getElementById("cerrarEsenciaX");
+const btnOpenEsencia = document.getElementById("openEsencia");
+
+
+// 👉 FUNCIÓN PARA ABRIR EL MODAL
+function abrirModalEsencia(titulo, texto) {
+  titleEsencia.textContent = titulo;
+  textEsencia.textContent = texto;
+  modalEsencia.classList.add("show");
+}
+
+
+// 👉 BOTÓN QUE ABRE EL MODAL
+btnOpenEsencia.addEventListener("click", () => {
+  abrirModalEsencia(
+    "Nuestra Historia",
+    "San Sebastián de Buenavista nació entre el río, la tradición y la identidad cultural..."
+  );
+});
+
+
+// 👉 BOTÓN CERRAR
+btnCerrarEsencia.addEventListener("click", () => {
+  modalEsencia.classList.remove("show");
+});
+
+// 👉 X CERRAR
+xCerrarEsencia.addEventListener("click", () => {
+  modalEsencia.classList.remove("show");
+});
+
+// 👉 CERRAR HACIENDO CLICK AFUERA
+modalEsencia.addEventListener("click", (e) => {
+  if (e.target === modalEsencia) {
+    modalEsencia.classList.remove("show");
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // TURISMO SLIDER // 
   let nextBtn = document.querySelector('.next');
@@ -97,31 +142,70 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// TARJETAS QUE HABLAN (SOLO LEE LA PARTE DE ATRÁS)//
+// TARJETAS QUE HABLAN (CON VOZ GOOGLE Y DATA-TEXT) //
 
 let selectedVoice = null;
 
 // Cargar voces cuando estén disponibles
 function loadVoices() {
   const voices = speechSynthesis.getVoices();
-  // Cambia el nombre por la voz exacta que quieras, por ejemplo "Google US Spanish"
-  selectedVoice = voices.find(v => v.name === "Google español");
+
+  // 🔥 Busca cualquier voz Google en español
+  selectedVoice = voices.find(v =>
+    v.name.toLowerCase().includes("google") &&
+    v.lang.toLowerCase().startsWith("es")
+  );
 }
 
 speechSynthesis.onvoiceschanged = loadVoices;
 
-function speak(text) {
-  window.speechSynthesis.cancel(); // Evita que se superpongan voces
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "es-ES"; 
-  if (selectedVoice) u.voice = selectedVoice;
-  speechSynthesis.speak(u);
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-const cards = document.querySelectorAll('.card');
+  const tarjetas = document.querySelectorAll(".card");
 
-cards.forEach(c => {
-  c.addEventListener("click", () => {
-    speak(c.dataset.text);
+  let utterance = null;
+  let hablando = false;
+
+  tarjetas.forEach(card => {
+
+    const textoData = card.dataset.text; // 🔥 ESTA ES LA LÍNEA IMPORTANTE
+
+    card.addEventListener("click", (e) => {
+
+      e.preventDefault(); // evita doble clic por flip
+
+      // ✔ SI YA ESTÁ HABLANDO → DETENER
+      if (hablando) {
+        speechSynthesis.cancel();
+        hablando = false;
+        utterance = null;
+        return;
+      }
+
+      // ✔ cancelar voces previas
+      speechSynthesis.cancel();
+
+      // ✔ utilizar SOLO data-text
+      utterance = new SpeechSynthesisUtterance(textoData);
+
+      // ✔ asignar voz Google
+      if (selectedVoice) utterance.voice = selectedVoice;
+
+      utterance.lang = "es-ES";
+
+      utterance.onend = () => {
+        hablando = false;
+        utterance = null;
+      };
+
+      hablando = true;
+
+      // ✔ Delay requerido por Chrome
+      setTimeout(() => {
+        speechSynthesis.speak(utterance);
+      }, 60);
+    });
+
   });
+
 });
