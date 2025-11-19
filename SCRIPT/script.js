@@ -97,31 +97,70 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// TARJETAS QUE HABLAN (SOLO LEE LA PARTE DE ATRÁS)//
+// TARJETAS QUE HABLAN (CON VOZ GOOGLE Y DATA-TEXT) //
 
 let selectedVoice = null;
 
 // Cargar voces cuando estén disponibles
 function loadVoices() {
   const voices = speechSynthesis.getVoices();
-  // Cambia el nombre por la voz exacta que quieras, por ejemplo "Google US Spanish"
-  selectedVoice = voices.find(v => v.name === "Google español");
+
+  // 🔥 Busca cualquier voz Google en español
+  selectedVoice = voices.find(v =>
+    v.name.toLowerCase().includes("google") &&
+    v.lang.toLowerCase().startsWith("es")
+  );
 }
 
 speechSynthesis.onvoiceschanged = loadVoices;
 
-function speak(text) {
-  window.speechSynthesis.cancel(); // Evita que se superpongan voces
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "es-ES"; 
-  if (selectedVoice) u.voice = selectedVoice;
-  speechSynthesis.speak(u);
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-const cards = document.querySelectorAll('.card');
+  const tarjetas = document.querySelectorAll(".card");
 
-cards.forEach(c => {
-  c.addEventListener("click", () => {
-    speak(c.dataset.text);
+  let utterance = null;
+  let hablando = false;
+
+  tarjetas.forEach(card => {
+
+    const textoData = card.dataset.text; // 🔥 ESTA ES LA LÍNEA IMPORTANTE
+
+    card.addEventListener("click", (e) => {
+
+      e.preventDefault(); // evita doble clic por flip
+
+      // ✔ SI YA ESTÁ HABLANDO → DETENER
+      if (hablando) {
+        speechSynthesis.cancel();
+        hablando = false;
+        utterance = null;
+        return;
+      }
+
+      // ✔ cancelar voces previas
+      speechSynthesis.cancel();
+
+      // ✔ utilizar SOLO data-text
+      utterance = new SpeechSynthesisUtterance(textoData);
+
+      // ✔ asignar voz Google
+      if (selectedVoice) utterance.voice = selectedVoice;
+
+      utterance.lang = "es-ES";
+
+      utterance.onend = () => {
+        hablando = false;
+        utterance = null;
+      };
+
+      hablando = true;
+
+      // ✔ Delay requerido por Chrome
+      setTimeout(() => {
+        speechSynthesis.speak(utterance);
+      }, 60);
+    });
+
   });
+
 });
