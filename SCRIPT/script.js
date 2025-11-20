@@ -1,212 +1,212 @@
-// Activar íconos de Lucide
-lucide.createIcons();
+// app.js — Script único e integrado (pegar entero, cargar con defer)
 
-// Seleccionar elementos
-const toggle = document.querySelector('.mi-nav-menu-toggle');
-const navMenu = document.querySelector('.mi-nav-menu');
-const icon = toggle.querySelector('i');
-
-// Evento de clic para abrir/cerrar menú
-toggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  toggle.classList.toggle('rotate');
-
-  // Cambiar ícono de "menu" a "x"
-  const isOpen = navMenu.classList.contains('active');
-  icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-  lucide.createIcons(); // actualizar el ícono
-});
-
-// modal esencia
-const modalEsencia = document.getElementById("modalEsencia");
-const titleEsencia = document.getElementById("modalEsenciaTitle");
-const textEsencia = document.getElementById("modalEsenciaText");
-
-const btnCerrarEsencia = document.getElementById("cerrarEsenciaBtn");
-const xCerrarEsencia = document.getElementById("cerrarEsenciaX");
-const btnOpenEsencia = document.getElementById("openEsencia");
-
-
-// 👉 FUNCIÓN PARA ABRIR EL MODAL
-function abrirModalEsencia(titulo, texto) {
-  titleEsencia.textContent = titulo;
-  textEsencia.textContent = texto;
-  modalEsencia.classList.add("show");
+// Activar iconos Lucide (si lo usas)
+if (typeof lucide !== "undefined" && lucide.createIcons) {
+  lucide.createIcons();
 }
-
-
-// 👉 BOTÓN QUE ABRE EL MODAL
-btnOpenEsencia.addEventListener("click", () => {
-  abrirModalEsencia(
-    "Nuestra Historia",
-    "San Sebastián de Buenavista nació entre el río, la tradición y la identidad cultural..."
-  );
-});
-
-
-// 👉 BOTÓN CERRAR
-btnCerrarEsencia.addEventListener("click", () => {
-  modalEsencia.classList.remove("show");
-});
-
-// 👉 X CERRAR
-xCerrarEsencia.addEventListener("click", () => {
-  modalEsencia.classList.remove("show");
-});
-
-// 👉 CERRAR HACIENDO CLICK AFUERA
-modalEsencia.addEventListener("click", (e) => {
-  if (e.target === modalEsencia) {
-    modalEsencia.classList.remove("show");
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  // TURISMO SLIDER // 
-  let nextBtn = document.querySelector('.next');
-  let prevBtn = document.querySelector('.prev');
-
-  let slider = document.querySelector('.slider');
-  let sliderList = slider.querySelector('.slider .list');
-  let thumbnail = document.querySelector('.slider .thumbnail');
-  let thumbnailItems = thumbnail.querySelectorAll('.item');
-
-  thumbnail.appendChild(thumbnailItems[0]);
-
-  // Function for next button 
-  nextBtn.onclick = function() {
-      moveSlider('next');
-  }
-
-  // Function for prev button 
-  prevBtn.onclick = function() {
-      moveSlider('prev');
-  }
-
-  function moveSlider(direction) {
-      let sliderItems = sliderList.querySelectorAll('.item');
-      let thumbnailItems = document.querySelectorAll('.thumbnail .item');
-      
-      if(direction === 'next'){
-          sliderList.appendChild(sliderItems[0]);
-          thumbnail.appendChild(thumbnailItems[0]);
-          slider.classList.add('next');
-      } else {
-          sliderList.prepend(sliderItems[sliderItems.length - 1]);
-          thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1]);
-          slider.classList.add('prev');
-      }
-
-      slider.addEventListener('animationend', function() {
-          if(direction === 'next'){
-              slider.classList.remove('next');
-          } else {
-              slider.classList.remove('prev');
-          }
-      }, {once: true});
-  }
-
-  // ===============================================
-  // MODALES PERSONALIZADOS PARA "VER MÁS"
-  // ===============================================
-
-  const verMasBtns = document.querySelectorAll('.button .ver-mas, .button button[data-modal]');
-  const modals = document.querySelectorAll('.modal-custom');
-
-  function abrirModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) modal.classList.add('show');
-  }
-
-  function cerrarModal(modal) {
-    modal.classList.remove('show');
-  }
-
-  verMasBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.modal;
-      if (id) abrirModal(id);
-    });
-  });
-
-  modals.forEach(m => {
-    m.querySelector('.close-modal').addEventListener('click', () => cerrarModal(m));
-  });
-
-  window.addEventListener('click', e => {
-    modals.forEach(modal => {
-      if (e.target === modal) cerrarModal(modal);
-    });
-  });
-});
-
-
-// TARJETAS QUE HABLAN (CON VOZ GOOGLE Y DATA-TEXT) //
-
-let selectedVoice = null;
-
-// Cargar voces cuando estén disponibles
-function loadVoices() {
-  const voices = speechSynthesis.getVoices();
-
-  // 🔥 Busca cualquier voz Google en español
-  selectedVoice = voices.find(v =>
-    v.name.toLowerCase().includes("google") &&
-    v.lang.toLowerCase().startsWith("es")
-  );
-}
-
-speechSynthesis.onvoiceschanged = loadVoices;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const tarjetas = document.querySelectorAll(".card");
+  // -----------------------------
+  // MENÚ RESPONSIVE (si existe)
+  // -----------------------------
+  try {
+    const toggle = document.querySelector('.mi-nav-menu-toggle');
+    const navMenu = document.querySelector('.mi-nav-menu');
+    const icon = toggle ? toggle.querySelector('i') : null;
 
-  let utterance = null;
-  let hablando = false;
+    if (toggle && navMenu) {
+      toggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        toggle.classList.toggle('rotate');
 
-  tarjetas.forEach(card => {
+        if (icon) {
+          const isOpen = navMenu.classList.contains('active');
+          icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+          if (typeof lucide !== "undefined" && lucide.createIcons) lucide.createIcons();
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error inicializando menú:", err);
+  }
 
-    const textoData = card.dataset.text; // 🔥 ESTA ES LA LÍNEA IMPORTANTE
+  // -----------------------------
+  // SLIDER DE TURISMO - TODOS LOS SLIDERS
+  // -----------------------------
+  try {
+    const sliders = document.querySelectorAll('.slider');
+    sliders.forEach((slider, idx) => {
+      const sliderList = slider.querySelector('.list');
+      const thumbnail = slider.querySelector('.thumbnail');
+      // Preferir botones dentro del slider; si no, buscar globalmente
+      let nextBtn = slider.querySelector('.next') || document.querySelector('.next');
+      let prevBtn = slider.querySelector('.prev') || document.querySelector('.prev');
 
-    card.addEventListener("click", (e) => {
-
-      e.preventDefault(); // evita doble clic por flip
-
-      // ✔ SI YA ESTÁ HABLANDO → DETENER
-      if (hablando) {
-        speechSynthesis.cancel();
-        hablando = false;
-        utterance = null;
+      if (!sliderList) {
+        console.warn(`Slider #${idx}: falta .list — se omite este slider.`);
+        return;
+      }
+      if (!nextBtn || !prevBtn) {
+        console.warn(`Slider #${idx}: faltan botones .next/.prev — se omite este slider.`);
         return;
       }
 
-      // ✔ cancelar voces previas
-      speechSynthesis.cancel();
+      // Evitar multiples bindings: clonamos si hay listeners previos potenciales
+      nextBtn = nextBtn.cloneNode(true);
+      prevBtn = prevBtn.cloneNode(true);
 
-      // ✔ utilizar SOLO data-text
-      utterance = new SpeechSynthesisUtterance(textoData);
+      // Si los botones estaban fuera del slider y ya existían clones, reemplaza en el DOM
+      // (esto solo reemplaza la instancia encontrada dentro del slider o en el documento)
+      const parentNext = slider.querySelector('.next') ? slider.querySelector('.next').parentNode : document.querySelector('.next')?.parentNode;
+      const parentPrev = slider.querySelector('.prev') ? slider.querySelector('.prev').parentNode : document.querySelector('.prev')?.parentNode;
+      if (parentNext && parentNext.contains(slider.querySelector('.next'))) {
+        parentNext.replaceChild(nextBtn, slider.querySelector('.next'));
+      } else if (document.querySelector('.next') && parentNext) {
+        parentNext.replaceChild(nextBtn, document.querySelector('.next'));
+      }
+      if (parentPrev && parentPrev.contains(slider.querySelector('.prev'))) {
+        parentPrev.replaceChild(prevBtn, slider.querySelector('.prev'));
+      } else if (document.querySelector('.prev') && parentPrev) {
+        parentPrev.replaceChild(prevBtn, document.querySelector('.prev'));
+      }
 
-      // ✔ asignar voz Google
-      if (selectedVoice) utterance.voice = selectedVoice;
+      // Reasignar referencias (ya que clonamos/reemplazamos)
+      nextBtn = slider.querySelector('.next') || document.querySelector('.next');
+      prevBtn = slider.querySelector('.prev') || document.querySelector('.prev');
 
-      utterance.lang = "es-ES";
+      // Inicial sync thumbnails (si existen)
+      if (thumbnail && thumbnail.children.length > 0) {
+        // opcional: mover primer thumbnail al final para sincronizar
+        // thumbnail.appendChild(thumbnail.children[0]);
+      }
 
-      utterance.onend = () => {
-        hablando = false;
-        utterance = null;
-      };
+      function moveSlider(direction) {
+        const sliderItems = sliderList.querySelectorAll('.item');
+        const thumbItems = thumbnail ? thumbnail.querySelectorAll('.item') : [];
 
-      hablando = true;
+        if (sliderItems.length === 0) return;
 
-      // ✔ Delay requerido por Chrome
-      setTimeout(() => {
-        speechSynthesis.speak(utterance);
-      }, 60);
+        if (direction === "next") {
+          sliderList.appendChild(sliderItems[0]);
+          if (thumbnail && thumbItems.length) thumbnail.appendChild(thumbItems[0]);
+          slider.classList.add('next');
+        } else {
+          sliderList.prepend(sliderItems[sliderItems.length - 1]);
+          if (thumbnail && thumbItems.length) thumbnail.prepend(thumbItems[thumbItems.length - 1]);
+          slider.classList.add('prev');
+        }
+
+        // Quitar clases tras la animación o con fallback
+        const onAnim = () => {
+          slider.classList.remove('next', 'prev');
+          slider.removeEventListener('animationend', onAnim);
+        };
+        slider.addEventListener('animationend', onAnim, { once: true });
+        setTimeout(() => slider.classList.remove('next', 'prev'), 700);
+      }
+
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // importante: que no burbujee a handlers globales
+        moveSlider('next');
+      });
+
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        moveSlider('prev');
+      });
+
+    }); // end sliders.forEach
+  } catch (err) {
+    console.error("Error inicializando sliders:", err);
+  }
+
+  // -----------------------------
+  // MODALES "VER MÁS" (MODAL-CUSTOM)
+  // -----------------------------
+  try {
+    const verMasBtns = document.querySelectorAll('[data-modal]');
+    const modales = document.querySelectorAll('.modal-custom');
+
+    verMasBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita colisiones con handlers globales
+        const id = btn.dataset.modal;
+        const modal = document.getElementById(id);
+        if (modal) {
+          modal.classList.add('show');
+        } else {
+          console.warn('No se encontró modal con id:', id);
+        }
+      });
     });
 
-  });
+    modales.forEach(modal => {
+      // Cerrar con botón X (si existe)
+      const closeBtn = modal.querySelector('.close-modal');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          modal.classList.remove('show');
+        });
+      }
 
-});
+      // Cerrar cuando se haga click en el fondo del modal (target === modal)
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+        }
+      });
+    });
 
+  } catch (err) {
+    console.error("Error inicializando modales 'ver más':", err);
+  }
+
+  // -----------------------------
+  // TARJETAS HABLANTES (SPEECH)
+  // -----------------------------
+  try {
+    let selectedVoice = null;
+    function loadVoices() {
+      const voices = speechSynthesis.getVoices();
+      selectedVoice = voices.find(v =>
+        v.name.toLowerCase().includes("google") &&
+        v.lang.toLowerCase().startsWith("es")
+      ) || voices.find(v => v.lang && v.lang.startsWith('es')) || null;
+    }
+    // Cargar voces
+    loadVoices();
+    speechSynthesis.onvoiceschanged = loadVoices;
+
+    const tarjetas = document.querySelectorAll(".card[data-text]");
+    tarjetas.forEach(card => {
+      let hablando = false;
+      let utterance = null;
+
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const texto = card.dataset.text;
+        if (!texto) return;
+
+        if (hablando) {
+          speechSynthesis.cancel();
+          hablando = false;
+          return;
+        }
+
+        speechSynthesis.cancel();
+        utterance = new SpeechSynthesisUtterance(texto);
+        if (selectedVoice) utterance.voice = selectedVoice;
+        utterance.lang = "es-ES";
+        utterance.onend = () => { hablando = false; };
+        hablando = true;
+        setTimeout(() => speechSynthesis.speak(utterance), 60);
+      });
+    });
+
+  } catch (err) {
+    console.error("Error inicializando tarjetas hablantes:", err);
+  }
+
+}); // end DOMContentLoaded

@@ -1,12 +1,3 @@
-/* Hotel.css - clases específicas para evitar choques */
-.body-hotel {
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman', Times, serif;
-    background: linear-gradient(to right, #7cc4ff, #ffffff);
-    
-
-}
 
 /* Sección hotel */
 .hotel-section {
@@ -20,6 +11,7 @@
     padding-top: 120px;
     z-index: 2;
     position: relative;
+    background: linear-gradient(to right, #7cc4ff, #ffffff)
 }
 
 /* Título / intro (mantengo el nombre existente) */

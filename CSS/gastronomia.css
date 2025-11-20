@@ -1,12 +1,12 @@
 
-.body-gastro {
-    background: linear-gradient(to right, #f3c035 0%, #fcfcfc 100%); 
+.gastronomia-section{
     margin: 0px;
     padding: 20px;
     box-sizing: border-box;
     margin-bottom: -100px;
     font-family: 'Times New Roman', Times, serif;
     min-height: 950px;
+    background: linear-gradient(to right, #f3c035 0%, #fcfcfc 100%)
 }
 
 /* Intro */

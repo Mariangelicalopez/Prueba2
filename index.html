@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="CSS/fiestas.css">
   <link rel="stylesheet" href="CSS/simbolos.css">
   <link rel="stylesheet" href="CSS/curiosidades.css">
+  <link rel="stylesheet" href="CSS/esencia.css">
 </head>
 
 <body>
@@ -79,57 +80,77 @@
     </div>
   </section>
 
-  <!-- SECCIÓN ESENCIA -->
-  <section class="esencia" id="seccion-inferior">
-    <div class="esencia-container">
+<!-- ========================= -->
+<!--   SECCIÓN ESENCIA        -->
+<!-- ========================= -->
+<section class="esencia" id="seccion-inferior">
+  <div class="esencia-container">
 
-      <div class="esencia-texto">
-        <h2>🪘San Sebastian de Buenavista</h2>
+    <div class="esencia-texto">
+      <h2>🪘San Sebastián de Buenavista</h2>
+      <p>
+        San Sebastián de Buenavista, ubicado en el sur del Magdalena, en plena Depresión Momposina,
+        es un municipio ribereño donde se entrelazan naturaleza, cultura y tradición.
+      </p>
+    </div>
+
+    <div class="esencia-contenido">
+      <div class="esencia-imagen"></div>
+
+      <div class="esencia-texto-2">
         <p>
-          San Sebastián de Buenavista, ubicado en el sur del Magdalena, en plena Depresión Momposina,
-          es un municipio ribereño donde se entrelazan naturaleza, cultura y tradición. Con cerca de
-          22.600 habitantes, es reconocida como “La Tierra del Chandé”, por su música autóctona,
-          su espíritu alegre y la profunda identidad cultural de su gente.
+          Fundado en 1748, San Sebastián de Buenavista guarda las huellas de los pueblos Chimilas
+          y del legado español. Nació entre el río y la ciénaga, y creció al ritmo de los tambores.
+        </p>
+
+        <!-- BOTÓN QUE ABRE EL MODAL -->
+        <button 
+          class="btn btn-warning fw-bold" 
+          data-bs-toggle="modal" 
+          data-bs-target="#modalEsencia">
+          📖 Conoce nuestra historia
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========================= -->
+<!--   MODAL ESENCIA          -->
+<!-- ========================= -->
+<div class="modal fade" id="modalEsencia" tabindex="-1" aria-labelledby="modalEsenciaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- HEADER -->
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title fw-bold" id="modalEsenciaLabel">Historia de San Sebastián de Buenavista</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <p>
+          San Sebastián de Buenavista, fundado en 1748, es un pueblo nacido entre las aguas del río y 
+          la riqueza cultural de la Depresión Momposina. Su historia está marcada por los pueblos 
+          indígenas Chimilas, la influencia española y la identidad musical que caracteriza a su gente.
+          <br><br>
+          Conocido como “La Tierra del Chandé”, este municipio conserva tradiciones que se transmiten 
+          de generación en generación, celebrando con orgullo la música, la danza y la vida en comunidad.
         </p>
       </div>
 
-      <div class="esencia-contenido">
-        <div class="esencia-imagen"></div>
-
-        <div class="esencia-texto-2">
-          <p>
-            Fundado en 1748, San Sebastián de Buenavista guarda las huellas de los pueblos Chimilas
-            y del legado español
-            Nació entre el río y la ciénaga, y creció al ritmo de los tambores, las cosechas y la fe
-            en San Sebastián Mártir.<br>
-            Hoy, sigue siendo un símbolo de historia viva en la Depresión Momposina.
-          </p>
-          <button class="btn-esencia" id="openEsencia">📖 Conoce nuestra historia</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MODAL ESENCIA -->
-  <div id="modalEsencia" class="modal-esencia">
-    <div class="modal-esencia-contenido">
-
-      <div class="modal-esencia-header">
-        <h2 id="modalEsenciaTitle">Título aquí</h2>
-        <span class="modal-esencia-x" id="cerrarEsenciaX">&times;</span>
-      </div>
-
-      <div class="modal-esencia-body">
-        <p id="modalEsenciaText">Texto del modal aquí.</p>
-      </div>
-
-      <div class="modal-esencia-footer">
-        <button id="cerrarEsenciaBtn" class="modal-esencia-btn">Cerrar</button>
+      <!-- FOOTER -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
 
     </div>
   </div>
+</div>
+
 
   <!-- SECCIÓN CHANDÉ -->
   <section class="chande" id="cultura">
@@ -244,6 +265,51 @@
           </div>
         </div>
 
+        <div class="item">
+          <img src="./imagenes/Iglesia.jpg" alt="">
+          <div class="content">
+            <div class="title">San Sebastián de Buenavista</div>
+            <div class="type">Iglesia Central de San Sebastián Mártir</div>
+            <div class="description">
+              El corazón espiritual del pueblo, donde la fe se mezcla con la belleza colonial.
+              Un lugar de paz y devoción que invita a la reflexión y al encuentro con lo divino.
+            </div>
+            <div class="button">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modalIglesia">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="./imagenes/Iglesia.jpg" alt="">
+          <div class="content">
+            <div class="title">San Sebastián de Buenavista</div>
+            <div class="type">Iglesia Central de San Sebastián Mártir</div>
+            <div class="description">
+              El corazón espiritual del pueblo, donde la fe se mezcla con la belleza colonial.
+              Un lugar de paz y devoción que invita a la reflexión y al encuentro con lo divino.
+            </div>
+            <div class="button">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modalIglesia">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="./imagenes/Iglesia.jpg" alt="">
+          <div class="content">
+            <div class="title">San Sebastián de Buenavista</div>
+            <div class="type">Iglesia Central de San Sebastián Mártir</div>
+            <div class="description">
+              El corazón espiritual del pueblo, donde la fe se mezcla con la belleza colonial.
+              Un lugar de paz y devoción que invita a la reflexión y al encuentro con lo divino.
+            </div>
+            <div class="button">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modalIglesia">Ver más</button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="thumbnail">
@@ -260,6 +326,8 @@
 
     </div>
   </section>
+
+
 <!-- MODALES DE BOOTSTRAP -->
 
 <!-- MODAL IGLESIA -->
@@ -357,7 +425,7 @@
 
 
 <!-- HOTEL -->
-<section id="hotel" class="hotel-section body-hotel">
+<section id="hotel" class="hotel-section ">
   <div class="intro-hotel">
     <h2>Hoteles de San Sebastián de Buenavista</h2>
     <p>Sabores auténticos que cuentan la historia de nuestra tierra.<br>
@@ -412,8 +480,10 @@
 
 
 
+
+
 <!-- GASTRONOMÍA -->
-<section id="gastronomia" class="gastronomia-section body-gastro">
+<section id="gastronomia" class="gastronomia-section">
 
   <div class="gas-intro">
     <h2>Gastronomía de San Sebastián de Buenavista</h2>
@@ -470,7 +540,6 @@
     </div>
   </div>
 </section>
-
 
 
 <!-- ARTESANÍAS -->
