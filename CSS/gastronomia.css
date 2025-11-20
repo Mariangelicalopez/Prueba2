@@ -129,23 +129,70 @@
   transform: translateY(0) !important;
 }
 
-/* Asignar imágenes de fondo por card (puedes ajustar rutas) */
+/* 1 */
 .gastronomia-section .gas-card[for="g-c1"] { 
-  background-image: url('../imagenes/Carrillo.jpg'); 
+  background-image: url('../imagenes/Yuca.jpg'); 
   background-size: cover; 
 }
+
+/* 2 */
 .gastronomia-section .gas-card[for="g-c2"] { 
-  background-image: url('../imagenes/Chanas.jpg'); 
+  background-image: url('../imagenes/Pes.jpg'); 
   background-size: cover; 
 }
+
+/* 3 */
 .gastronomia-section .gas-card[for="g-c3"] { 
-  background-image: url('../imagenes/Obelisco.jpg'); 
+  background-image: url('../imagenes/Almo.jpeg'); 
   background-size: cover; 
 }
+
+/* 4 */
 .gastronomia-section .gas-card[for="g-c4"] { 
-  background-image: url('../imagenes/Rio.jpg'); 
+  background-image: url('../imagenes/sancocho.jpg'); 
   background-size: cover; 
 }
+
+/* 5 */
+.gastronomia-section .gas-card[for="g-c5"] { 
+  background-image: url('../imagenes/arepas.jpg'); 
+  background-size: cover; 
+}
+
+/* 6 */
+.gastronomia-section .gas-card[for="g-c6"] { 
+  background-image: url('../imagenes/Huila.jpg'); 
+  background-size: cover; 
+}
+
+/* 7 */
+.gastronomia-section .gas-card[for="g-c7"] { 
+  background-image: url('../imagenes/Enyucado.jpg'); 
+  background-size: cover; 
+}
+
+/* 8 */
+.gastronomia-section .gas-card[for="g-c8"] { 
+  background-image: url('../imagenes/Arroz.jpg'); 
+  background-size: cover; 
+}
+
+/* 10 */
+.gastronomia-section .gas-card[for="g-c9"] { 
+  background-image: url('../imagenes/dulces.jpg'); 
+  background-size: cover; 
+}
+
+/* 11 */
+.gastronomia-section .gas-card[for="g-c10"] { 
+  background-image: url('../imagenes/chicha.jpg'); 
+  background-size: cover; 
+}
+.gastronomia-section .gas-card[for="g-c11"] { 
+  background-image: url('../imagenes/Jugos.webp'); 
+  background-size: cover; 
+}
+
 
 
 

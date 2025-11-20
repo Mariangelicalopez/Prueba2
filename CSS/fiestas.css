@@ -63,11 +63,11 @@
 }
 
 /* Imágenes desde CSS */
-.fiesta-1 .fiesta-img { background-image: url('../imagenes/Rio.jpg'); }
-.fiesta-2 .fiesta-img { background-image: url('../imagenes/piscina.jpg'); }
-.fiesta-3 .fiesta-img { background-image: url('../imagenes/Chanas.jpg'); }
-.fiesta-4 .fiesta-img { background-image: url('../imagenes/Carrillo.jpg'); }
-.fiesta-5 .fiesta-img { background-image: url('../imagenes/Iglesia.jpg'); } 
+.fiesta-1 .fiesta-img { background-image: url('../imagenes/Fsansebastian1.jpg'); }
+.fiesta-2 .fiesta-img { background-image: url('../imagenes/Fchande.jpg'); }
+.fiesta-3 .fiesta-img { background-image: url('../imagenes/Carnavales.jpg'); }
+.fiesta-4 .fiesta-img { background-image: url('../imagenes/Virgen.jpg'); }
+.fiesta-5 .fiesta-img { background-image: url('../imagenes/Cosecha.jpeg'); } 
 
 /* Config imagen */
 .fiesta-img {

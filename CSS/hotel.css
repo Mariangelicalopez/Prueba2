@@ -17,7 +17,7 @@
 /* Título / intro (mantengo el nombre existente) */
 .intro-hotel {
   text-align: center;
-  margin: 60px auto 40px;
+  margin: 20px auto 50px;
   max-width: 900px;
   color: #000000;
   line-height: 1.5;
@@ -30,7 +30,7 @@
   margin-bottom: 10px;
 }
 .intro-hotel p {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #000000;
   margin: 0 auto;
   max-width: 800px;
@@ -62,7 +62,7 @@
 /* Cada tarjeta del hotel (nombre específico) */
 .hotel-container .hotel-card{
     position: relative;
-    width: 250px;
+    width: 350px;
     height: 250px;
     background: #fff;
     border-radius: 40px;
